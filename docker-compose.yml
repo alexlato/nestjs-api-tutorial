@@ -10,5 +10,15 @@ services:
       POSTGRES_DB: nestjs_backend
     networks:
       - alexlato
+  test-db:
+    image: postgres:15.1
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: alexpass
+      POSTGRES_DB: nestjs_backend
+    networks:
+      - alexlato
 networks:
   alexlato:
